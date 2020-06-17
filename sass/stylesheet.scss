@@ -40,7 +40,7 @@ $typeface: 'Times New Roman', Times, serif;
     }
 }
 
-.presentation {
+.presentation, .BFS {
     padding-top: 2%;
     padding-right: 2%;
     h2 {
@@ -56,4 +56,11 @@ $typeface: 'Times New Roman', Times, serif;
         text-align: justify;
     }
     
+}
+
+.Code {
+    pre{
+        position: relative;
+        right: 10%;
+    }
 }

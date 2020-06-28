@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
+        <link rel="stylesheet" href="sass/stylesheet.css">
+        <title>GraphExpert</title>
+    </head>
+    <body>
+        <div id="header">
+            <h1>Depth-First Search</h1>
+            <img src="image/graph_logo.png" alt="website logo">
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <div class="btn_group">
+                    <form action="homePage.html">
+                        <button class="btn btn-primary" type="submit">Home</button>
+                    </form>
+                    <form action="Basics.html">
+                        <button class="btn btn-primary" type="submit">Basics</button>
+                    </form>
+                    <form action="DFS.html">
+                        <button class="btn btn-primary" type="submit">DFS</button>
+                    </form>
+                    <form action="BFS.html">
+                        <button class="btn btn-primary" type="submit">BFS</button>
+                    </form>  
+                </div>
+            </div>
+            <div class="col-11">
+                <div class="DFS">
+                    <h2>Principle:</h2>
+                    <p>Depth-First Search algorithm allows you to traverse a graph, from a node S, in the following way: it starts at the root node S and explores as far as possible along each branch before backtracking. <br>
+                        So the basic idea is to start from the root or any arbitrary node and mark the node and move to the adjacent unmarked node and continue this loop until there is no unmarked adjacent node. Then backtrack and check for other unmarked nodes and traverse them.<br>
+                        It naturally describes itself recursively but we could also implement it using a LIFO stack: we unstack the summit we are exploring and stack up its yet unexplored neighbours.</p>
+                    <p>So, the main stages to implement DFS algorithm are:</p>
+                    <ol>
+                        <li>Create a recursive function that takes the index of node, the visited array and the graph.</li>
+                        <li>Mark the current node as visited and print the node.</li>
+                        <li>Traverse all the adjacent and unmarked nodes and call the recursive function with index of adjacent node.</li>
+                    </ol>
+                    <p>Below is an animation showing DFS applied on a graph:</p>
+                    <figure>
+                        <image src="image/Animated_DFS.gif" alt="animation illustrating DFS"></image>
+                        <figcaption class="legendDFS">Fig: red node = node explored, blue node = node unexplored</figcaption>
+                    </figure>
+
+                    <h2>Complexity:</h2>
+                    <p>The complexity is O(V+E) where V is the number of nodes and E the number of edges.</p> 
+                    <div class="Code">
+                        <h2>Code:</h2>
+                        <pre> 
+                            def DFS(graph, s):
+                                """Print all the elements of graph using DFS (recursive) where graph is given as a adjency list and s is the source node"""
+                                visited = [False]*len(graph)
+                                DFSUtil(graph, s , visited)
+                                
+                            
+                            def DFSUtil(graph, s, visited):
+                                """Recursive function called for DFS"
+                                visited[s] = True
+                                print(s, end=' ')
+
+                                for i in graph[s]:
+                                    if not visited[i]:
+                                        DFSUtil(graph, i, visited)
+                        </pre>
+                    </div>
+                </div>  
+            </div>
+        </div> 
+    </body>
+</html>

@@ -1,3 +1,10 @@
+table td, table th {
+  width: 20%;
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+
 #header {
   position: relative;
   height: 125px;
@@ -24,14 +31,16 @@
 .btn_group {
   padding-top: 25%;
 }
-.btn_group button {
+.btn_group .btn {
   position: relative;
   left: 15%;
   width: 80%;
+  min-width: 65px;
   height: 70px;
   margin-bottom: 40%;
   margin-top: 5%;
   border-radius: 50%;
+  border-color: #f73939;
   text-align: center;
   font-weight: bolder;
   color: white;
@@ -39,25 +48,81 @@
   cursor: pointer;
 }
 
-.presentation, .BFS {
+.presentation, .BFS, .DFS, .Basics {
   padding-top: 2%;
   padding-right: 2%;
 }
-.presentation h2, .BFS h2 {
+.presentation h2, .presentation h3, .presentation h4, .BFS h2, .BFS h3, .BFS h4, .DFS h2, .DFS h3, .DFS h4, .Basics h2, .Basics h3, .Basics h4 {
   font-weight: bolder;
   font-family: "Times New Roman", Times, serif;
   margin-top: 15px;
   margin-bottom: 15px;
 }
-.presentation p, .BFS p {
+.presentation p, .BFS p, .DFS p, .Basics p {
   font-size: 110%;
   font-family: "Times New Roman", Times, serif;
   text-align: justify;
+}
+.presentation p span, .BFS p span, .DFS p span, .Basics p span {
+  font-weight: bolder;
 }
 
 .Code pre {
   position: relative;
   right: 10%;
+}
+
+.legendBFS {
+  font-size: 0.8em;
+}
+
+.legendDFS {
+  position: relative;
+  font-size: 0.8em;
+  left: 18%;
+}
+
+table {
+  position: relative;
+  left: 5%;
+  width: 20%;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table th {
+  background-color: #80f7f9;
+}
+table td {
+  background-color: #d3d4d4;
+}
+
+@media only screen and (max-width: 800px) {
+  #header h1 {
+    font-size: 300%;
+  }
+  #header img {
+    display: None;
+  }
+
+  .presentation, .BFS, .DFS, .Basics {
+    padding-top: 2%;
+    padding-left: 4%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #header h1 {
+    font-size: 240%;
+  }
+  #header img {
+    display: None;
+  }
+
+  .presentation, .BFS, .DFS, .Basics {
+    padding-left: 8%;
+  }
+  .presentation p, .BFS p, .DFS p, .Basics p {
+    font-size: 100%;
+  }
 }
 
 /*# sourceMappingURL=stylesheet.css.map */

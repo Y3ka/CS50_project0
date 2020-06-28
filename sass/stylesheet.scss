@@ -1,4 +1,11 @@
 $typeface: 'Times New Roman', Times, serif;
+%tableitem {
+    width: 20%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+
 #header{
     position: relative;
     height: 125px;
@@ -24,14 +31,16 @@ $typeface: 'Times New Roman', Times, serif;
 
 .btn_group {
     padding-top: 25%;
-    button {
+    .btn {
         position: relative;
         left: 15%;
         width: 80%;
+        min-width: 65px;
         height: 70px;
         margin-bottom: 40%;
         margin-top: 5%;
         border-radius: 50%;
+        border-color: #f73939;
         text-align: center;
         font-weight: bolder;
         color: white;
@@ -40,20 +49,22 @@ $typeface: 'Times New Roman', Times, serif;
     }
 }
 
-.presentation, .BFS {
+.presentation, .BFS, .DFS, .Basics {
     padding-top: 2%;
     padding-right: 2%;
-    h2 {
+    h2, h3, h4 {
         font-weight: bolder;
         font-family: $typeface;
         margin-top: 15px;
         margin-bottom: 15px;
     }
-
     p {
         font-size: 110%;
         font-family: $typeface;
         text-align: justify;
+        span {
+            font-weight: bolder;
+        }
     }
     
 }
@@ -62,5 +73,62 @@ $typeface: 'Times New Roman', Times, serif;
     pre{
         position: relative;
         right: 10%;
+    }
+}
+
+.legendBFS {
+    font-size: 0.8em;
+}
+
+.legendDFS {
+    position: relative;
+    font-size: 0.8em;
+    left: 18%;
+}
+
+table {
+    position: relative;
+    left: 5%;
+    width: 20%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    th {
+        @extend %tableitem;
+        background-color: #80f7f9
+    }
+    td {
+        @extend %tableitem;
+        background-color: #d3d4d4
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #header{
+        h1 {
+            font-size: 300%;
+        }
+        img {
+            display: None;
+        }
+    }
+    .presentation, .BFS, .DFS, .Basics {
+        padding-top: 2%;
+        padding-left: 4%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    #header{
+        h1 {
+            font-size: 240%;
+        }
+        img {
+            display: None;
+        }
+    }
+    .presentation, .BFS, .DFS, .Basics {
+        padding-left: 8%;
+        p {
+            font-size: 100%;
+        }
     }
 }

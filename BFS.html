@@ -18,45 +18,42 @@
             <div class="col-1">
                 <div class="btn_group">
                     <form action="homePage.html">
-                        <button type="submit">Home page</button>
+                        <button class="btn btn-primary" type="submit">Home</button>
                     </form>
                     <form action="Basics.html">
-                        <button type="submit">Basics</button>
+                        <button class="btn btn-primary" type="submit">Basics</button>
                     </form>
                     <form action="DFS.html">
-                        <button type="submit">DFS</button>
+                        <button class="btn btn-primary" type="submit">DFS</button>
                     </form>
                     <form action="BFS.html">
-                        <button type="submit">BFS</button>
-                    </form>
-                    <form action="Dijkstra.html">
-                        <button type="submit">Dijkstra</button>
-                    </form>  
+                        <button class="btn btn-primary" type="submit">BFS</button>
+                    </form>   
                 </div>
             </div>
             <div class="col-11">
                 <div class="BFS">
                     <h2>Principle:</h2>
                     <p>Breadth-First Search algorithm allows you to traverse a graph in the following way: one starts by exploring a source node, then its successors, then the unexplored successors of the successors, and so on.<br>
-                        It differs from Depth-First Search by the fact that, from a source node S, it lists first the neighboors of S and then explore them one by one. Thus, this mode of operation uses a queue in which it takes the
-                        first node and put at the end its unexplored neighboors.</p>
+                        It differs from Depth-First Search by the fact that, from a source node S, it lists first the neighbours of S and then explore them one by one. Thus, this mode of operation uses a queue in which it takes the
+                        first node and put at the end its unexplored neighbours.</p>
                     <p>So, the main stages of the algorithm are :</p>
                     <ol>
                         <li>Put the source node in the queue</li>
                         <li>Remove the node at the beginning of the queue to process it</li>
-                        <li>Put every unexplored neighboors in the queue (since it is a queue it means at the end)</li>
+                        <li>Put every unexplored neighbours in the queue (since it is a queue it means at the end)</li>
                         <li>If the queue is not empty, start again at stage 2</li>
                     </ol>
                     <p>Below is an animation showing BFS applied on a graph:</p>
                     <figure>
                         <image src="image/Animated_BFS.gif" alt="animation illustrating BFS"></image>
-                        <figcaption>black node = node explored, white node = node unexplored, grey node = node in the queue</figcaption>
+                        <figcaption class="legendBFS">Fig: black node = node explored, white node = node unexplored, grey node = node in the queue</figcaption>
                     </figure>
 
                     <h2>Complexity:</h2>
                     <p>In the worst case the complexity is O(V+E) where V is the number of nodes and E the number of edges. Let's try to understand why.<br>
                         Let's take G=(V,E), a graph where no node is explored when the algorithm is called. Every node inserted in the queue are marked as explored, the conditionnal instruction therefore ensures that all the nodes are inserted at most one time. And since the insertion is done in O(1), the complexity is O(V)<br>
-                        The neighboors are given by the adjency list. They will be visited at most E time because the sum of the lengths of the adjacency lists is E (the number of edges). Thus, the final complexity is O(V+E)</p> 
+                        The neighbours are given by the adjency list. They will be visited at most E time because the sum of the lengths of the adjacency lists is E (the number of edges). Thus, the final complexity is O(V+E)</p> 
                     <div class="Code">
                         <h2>Code:</h2>
                         <pre> 

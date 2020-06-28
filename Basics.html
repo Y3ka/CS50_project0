@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
+        <link rel="stylesheet" href="sass/stylesheet.css">
+        <title>GraphExpert</title>
+    </head>
+    <body>
+        <div id="header">
+            <h1>Basics of graphs</h1>
+            <img src="image/graph_logo.png" alt="website logo">
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <div class="btn_group">
+                    <form action="homePage.html">
+                        <button class="btn btn-primary" type="submit">Home</button>
+                    </form>
+                    <form action="Basics.html">
+                        <button class="btn btn-primary" type="submit">Basics</button>
+                    </form>
+                    <form action="DFS.html">
+                        <button class="btn btn-primary" type="submit">DFS</button>
+                    </form>
+                    <form action="BFS.html">
+                        <button class="btn btn-primary" type="submit">BFS</button>
+                    </form>   
+                </div>
+            </div>
+            <div class="col-11">
+                <div class="Basics">
+                    <p>A graph is a diagram of points and lines connected to the points. It has at least one line joining a set of two vertices with no vertex connecting itself. 
+                        The concept of graphs in graph theory stands up on some basic terms such as point, line, vertex, edge, degree of vertices, properties of graphs, etc. 
+                        We will see these fundamentals of graph theory.</p>
+                
+                    <h3>Elements of a graph:</h3>
+
+                    <p><span>Point:</span> A point is a particular position in a one-dimensional, two-dimensional, or three-dimensional space. 
+                        For better understanding, a point can be denoted by a letter or a figure. It can be represented with a dot.<br>
+                        <span>Line:</span> A Line is a connection between two points. It can be represented with a solid line.</p>
+                    <figure>
+                        <image src="image/line.jpg" alt="schema of a line in a graph" style="position: relative; left: 5%;"></image>
+                        <figcaption>Here, ‘a’ and ‘b’ are the points. The link between these two points is called a line.</figcaption>
+                    </figure>
+                    <p><span>Vertex:</span> A vertex is a point where multiple lines meet. It is also called a node. Similar to points, a vertex is also denoted by a letter.<br> 
+                        <span>Edge:</span> An edge is the mathematical term for a line that connects two vertices. Many edges can be formed from a single vertex. 
+                        Without a vertex, an edge cannot be formed. There must be a starting vertex and an ending vertex for an edge.</p>
+
+                    <h3>Graph</h3>
+
+                    <p>A graph ‘G’ is defined as G = (V, E) Where V is a set of all vertices and E is a set of all edges in the graph</p>
+                    <figure>
+                        <image src="image/graph.jpg" alt="schema of a graph"></image>
+                        <figcaption>Here, ‘a’ and ‘b’ are the points. The link between these two points is called a line.</figcaption>
+                    </figure>
+                    <p>In the above example, ab, ac, cd, and bd are the edges of the graph. Similarly, a, b, c, and d are the vertices of the graph.</p>
+                    <h3>Loop</h3>
+                    <p>In a graph, if an edge is drawn from vertex to itself, it is called a loop.<br>
+                       In the graph below, there are two loops which are formed at vertex a, and vertex b.</p>
+                    <figure>
+                        <image src="image/two_loops.jpg" alt="schema of a graph with two loops"></image>
+                    </figure>
+
+                    <h3>Degree of vertex</h3>
+
+                    <p>It is the number of vertices adjacent to a vertex V. The notation is deg(V).<br>
+                        In a simple graph with n number of vertices, the degree of any vertices is deg(v) ≤ n – 1 ∀ v ∈ G <br>
+                        A vertex can form an edge with all other vertices except by itself. So the degree of a vertex will be up to the number of vertices in the graph minus 1. If there is a loop at any of the vertices, then it is not a Simple Graph.<br>
+                        Degree of vertex can be considered under two cases of graphs:</p>
+                    <ol>
+                        <li>Undirected Graph</li>
+                        <li>Directed Graph</li>
+                    </ol>
+
+                    <h4>1. Degree of Vertex in an Undirected Graph</h4>
+                    <p>An undirected graph has no directed edges. Consider the following example :</p>
+                    <figure>
+                        <image src="image/undirected_graph.jpg" alt="schema of an undirected graph"></image>
+                    </figure>
+                    <ul>
+                        <li>deg(a) = 2, as there are 2 edges meeting at vertex ‘a’.</li>
+                        <li>deg(b) = 3, as there are 3 edges meeting at vertex ‘b’.</li>
+                        <li>deg(c) = 1, as there is 1 edge formed at vertex ‘c’. 'c' is called a pendent vertex</li>
+                        <li>deg(d) = 2, as there are 2 edges meeting at vertex ‘d’.</li>
+                        <li>deg(a) = 2, as there are 2 edges meeting at vertex ‘a’.</li>
+                        <li>deg(e) = 0, as there are 0 edges formed at vertex ‘e’. 'e' is called a isolated vertex </li>
+                    </ul>
+
+                    <h4>2. Degree of Vertex in a Directed Graph</h4>
+                    <p>In a directed graph, each vertex has an indegree and an outdegree.<br>
+                        Indegree of vertex V is the number of edges which are coming into the vertex V (noted deg-(V)).<br>
+                        Outdegree of vertex V is the number of edges which are going out from the vertex V (noted deg+(V).</p>
+                    <p>Consider the following example fo which the indegree and outdegree vertices are shown in the table:</p>
+                    <figure>
+                        <image src="image/directed_graph.jpg" alt="schema of a directed graph"></image>
+                    </figure>
+                    <table>
+                        <tr> 
+                            <th>Vertex</th>
+                            <th>Indegree</th>
+                            <th>Outdegree</th>
+                        </tr>
+                        <tr>
+                            <td>a</td>
+                            <td>1</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>b</td>
+                            <td>2</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>c</td>
+                            <td>2</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>d</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>e</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>f</td>
+                            <td>1</td>
+                            <td>1</td>
+                       </tr>
+                       <tr>
+                            <td>g</td>
+                            <td>0</td>
+                            <td>2</td>
+                        </tr>
+                    </table>
+                </div>  
+            </div>
+        </div> 
+    </body>
+</html>

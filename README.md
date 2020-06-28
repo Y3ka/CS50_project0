@@ -18,4 +18,4 @@ Meeting requirements:
 and .class is used several times.
 - The stylesheet contains two @media query. It removes the website logo in the header and change the position and size of the text when the screen size becomes smaller.
 - I used the Bootstrap "btn-primary" component and used Bootstrap columns in each html file to separate the page between navigation bar and the main text.
-- I used one scss variable ($typeface), nesting (in #hearder for example) and inheritance (in th and td for the table)
+- I used one scss variable ($typeface), nesting (in #header for example) and inheritance (in th and td for the table)
